@@ -15,5 +15,20 @@ GOBIN="$(pwd)" GOPATH="$(mktemp -d)" go get github.com/carlmjohnson/sleep-for
 ## Screenshots
 
 ```bash
-TODO
+$ sleep-for -h
+sleep-for - Like Unix sleep but takes minutes, hours, etc.
+
+Usage:
+
+        sleep-for [options]
+
+Options:
+  -duration duration
+        how long to sleep (default 1s)
+  -verbose
+        log debug output
+
+$ sleep-for . -verbose
+sleep-for 2019/10/22 23:42:18 starting sleeping for 1s
+sleep-for 2019/10/22 23:42:19 done
 ```

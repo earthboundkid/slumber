@@ -55,7 +55,7 @@ type app struct {
 }
 
 func (a *app) exec() (err error) {
-	a.log("starting")
+	a.log("starting sleeping for %v", a.duration)
 	defer func() { a.log("done") }()
 	time.Sleep(a.duration)
 	return err
