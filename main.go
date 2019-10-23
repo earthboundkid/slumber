@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/carlmjohnson/exitcode"
-	"github.com/carlmjohnson/go-cli/app"
+	"github.com/carlmjohnson/sleep-for/app"
 )
 
 func main() {
