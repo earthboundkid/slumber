@@ -4,7 +4,7 @@ import (
 	"os"
 
 	"github.com/carlmjohnson/exitcode"
-	"github.com/carlmjohnson/sleep-for/app"
+	"github.com/carlmjohnson/slumber/app"
 )
 
 func main() {

@@ -15,11 +15,11 @@ func CLI(args []string) error {
 	fl := flag.NewFlagSet("app", flag.ContinueOnError)
 	silent := fl.Bool("quiet", false, "don't log output")
 	fl.Usage = func() {
-		fmt.Fprintf(fl.Output(), `sleep-for - Like Unix sleep but takes minutes, hours, etc.
+		fmt.Fprintf(fl.Output(), `slumber - Like Unix sleep but takes minutes, hours, etc.
 
 Usage:
 
-	sleep-for [options] <wake time>
+	slumber [options] <wake time>
 
 Wake time may be a duration (e.g. "1h2m3s") or a target time (e.g. "1:00pm" or "13:02:03").
 
@@ -72,7 +72,7 @@ func parseTime(s string) (d time.Duration, err error) {
 func appExec(duration time.Duration, verbose bool) error {
 	l := nooplogger
 	if verbose {
-		l = log.New(os.Stderr, "sleep-for ", log.LstdFlags).Printf
+		l = log.New(os.Stderr, "slumber ", log.LstdFlags).Printf
 	}
 	a := app{duration, l}
 	if err := a.exec(); err != nil {
@@ -92,7 +92,7 @@ type app struct {
 }
 
 func (a *app) exec() (err error) {
-	a.log("starting sleeping for %v", a.duration)
+	a.log("starting slumbering for %v", a.duration)
 	defer func() { a.log("done") }()
 	time.Sleep(a.duration)
 	return err
